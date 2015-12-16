@@ -7,15 +7,28 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDelegate {
 
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Parse.enableLocalDatastore()
+        Parse.setApplicationId("sSIwAi17zMohER9lg2rbiRcN7FeYzulpohspCZb3",
+            clientKey: "465FEuCdmYE3Gsl8dH7CDu2smKqdZujGUD0YMSYT")
+        
+        
+        if PFUser.currentUser() == nil{
+            self.window?.rootViewController = LoginViewController()
+        }
+        
         return true
     }
 
