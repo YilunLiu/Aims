@@ -8,6 +8,7 @@
 
 import UIKit
 import ParseUI
+import CocoaLumberjackSwift
 
 class SignupViewController: PFSignUpViewController, PFSignUpViewControllerDelegate {
 
@@ -22,6 +23,7 @@ class SignupViewController: PFSignUpViewController, PFSignUpViewControllerDelega
         // Dispose of any resources that can be recreated.
         
         self.delegate = self
+        self.minPasswordLength = 6
     }
     
 
@@ -38,10 +40,11 @@ class SignupViewController: PFSignUpViewController, PFSignUpViewControllerDelega
     // MARK: - PFLogInViewControllerDelegate
     
     func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
-        
+        DDLogError("User failed to sign up with error \(error)")
     }
     
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+        DDLogInfo("User signed in with user \(user)")
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let rootViewController = storyBoard.instantiateInitialViewController()!
         UIApplication.sharedApplication().keyWindow?.rootViewController = rootViewController

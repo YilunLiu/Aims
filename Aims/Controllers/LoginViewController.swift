@@ -8,6 +8,7 @@
 
 import UIKit
 import ParseUI
+import CocoaLumberjackSwift
 
 class LoginViewController: PFLogInViewController, PFLogInViewControllerDelegate {
 
@@ -35,10 +36,12 @@ class LoginViewController: PFLogInViewController, PFLogInViewControllerDelegate 
     
     // MARK: - PFLogInViewControllerDelegate
     func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
+        DDLogError("User Failed to Login in with Error \(error)")
         
     }
     
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+        DDLogInfo("User Logged in with user \(user)")
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let rootViewController = storyBoard.instantiateInitialViewController()!
         UIApplication.sharedApplication().keyWindow?.rootViewController = rootViewController
