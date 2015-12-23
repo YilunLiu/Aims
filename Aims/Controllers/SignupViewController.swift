@@ -15,15 +15,15 @@ class SignupViewController: PFSignUpViewController, PFSignUpViewControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.signUpView?.logo = UIImageView(image: UIImage(named: "login_signup_icon"))
+        self.delegate = self
+        self.minPasswordLength = 6
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
-        self.delegate = self
-        self.minPasswordLength = 6
     }
     
 
@@ -49,6 +49,7 @@ class SignupViewController: PFSignUpViewController, PFSignUpViewControllerDelega
         let rootViewController = storyBoard.instantiateInitialViewController()!
         UIApplication.sharedApplication().keyWindow?.rootViewController = rootViewController
     }
+    
     
     func signUpViewController(signUpController: PFSignUpViewController, shouldBeginSignUp info: [String : String]) -> Bool {
         return true

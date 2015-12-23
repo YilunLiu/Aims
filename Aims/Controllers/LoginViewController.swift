@@ -13,10 +13,12 @@ import CocoaLumberjackSwift
 class LoginViewController: PFLogInViewController, PFLogInViewControllerDelegate {
 
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.logInView?.logo = UIImageView(image: UIImage(named: "login_signup_icon"))
         self.fields.subtractInPlace(PFLogInFields.DismissButton)
         self.delegate = self
         self.signUpController = SignupViewController()
