@@ -9,16 +9,14 @@
 import UIKit
 
 class TaskItemCell: UITableViewCell {
-    @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var checkbox: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        self.checkButton.setImage(UIImage(named: "checkbox_unchecked"), forState: .Normal)
-        self.checkButton.setImage(UIImage(named: "checkbox_checked"), forState: .Selected)
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -31,7 +29,7 @@ class TaskItemCell: UITableViewCell {
     func setChecked(checked:Bool){
         self.titleLabel.enabled = !checked
         self.timeLabel.enabled = !checked
-        self.checkButton.selected = checked
+        self.checkbox.highlighted = checked
     }
     
 

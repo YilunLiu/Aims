@@ -28,6 +28,7 @@ class TodoListViewController: UITableViewController, TaskItemDelegate {
         self.tableView.allowsMultipleSelection = false
         self.startUpdate(fromInternet: false, includeComplete: self.includeComplete)
         self.navigationItem.title = "Todo List"
+        self.tableView.tableFooterView = UIView(frame: CGRectZero) // remove extra cell seperators
     }
     
     func startUpdate(fromInternet fromInternet: Bool, includeComplete include:Bool){

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gg2-Fl-UJG">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -25,7 +24,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZC-bt-y42">
-                                            <rect key="frame" x="55" y="11" width="29" height="21"/>
+                                            <rect key="frame" x="59" y="11" width="29" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -36,29 +35,51 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Qx-LL-KZN">
-                                            <rect key="frame" x="16" y="10" width="23" height="23"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox_unchecked" highlightedImage="checkbox_checked" translatesAutoresizingMaskIntoConstraints="NO" id="iei-nq-0r2">
+                                            <rect key="frame" x="16" y="8" width="27" height="27"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="4Qx-LL-KZN" secondAttribute="height" multiplier="1:1" id="833-0t-HDI"/>
+                                                <constraint firstAttribute="width" secondItem="iei-nq-0r2" secondAttribute="height" multiplier="1:1" id="LS0-dD-bTH"/>
                                             </constraints>
-                                            <state key="normal" title="Button"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcv-hs-9eO">
+                                            <rect key="frame" x="0.0" y="0.0" width="51" height="43"/>
                                             <connections>
-                                                <action selector="checkboxPressed:" destination="b9w-Mh-0Zl" eventType="touchUpInside" id="TPt-zz-RI8"/>
+                                                <action selector="checkboxPressed:" destination="b9w-Mh-0Zl" eventType="touchUpInside" id="0yg-IM-Nrp"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="GZC-bt-y42" firstAttribute="centerY" secondItem="4Qx-LL-KZN" secondAttribute="centerY" id="5YY-fv-LMI"/>
-                                        <constraint firstItem="GZC-bt-y42" firstAttribute="leading" secondItem="4Qx-LL-KZN" secondAttribute="trailing" constant="16" id="6fE-8d-KWo"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="iei-nq-0r2" secondAttribute="bottom" constant="2" id="0ip-a8-yjs"/>
+                                        <constraint firstItem="GZC-bt-y42" firstAttribute="leading" secondItem="iei-nq-0r2" secondAttribute="trailing" constant="8" id="3a6-m5-T4u"/>
+                                        <constraint firstItem="GZC-bt-y42" firstAttribute="leading" secondItem="iei-nq-0r2" secondAttribute="trailing" constant="8" id="4KV-Ei-lBN"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Hcv-hs-9eO" secondAttribute="bottom" constant="-8" id="79i-qq-Nmb"/>
                                         <constraint firstItem="H7r-oe-WXi" firstAttribute="centerY" secondItem="1wk-h1-dHL" secondAttribute="centerY" id="8Fc-uP-LgG"/>
-                                        <constraint firstItem="4Qx-LL-KZN" firstAttribute="top" secondItem="1wk-h1-dHL" secondAttribute="topMargin" constant="2" id="NGC-VO-Qxm"/>
-                                        <constraint firstItem="4Qx-LL-KZN" firstAttribute="leading" secondItem="1wk-h1-dHL" secondAttribute="leadingMargin" constant="8" id="QiT-49-8ig"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="iei-nq-0r2" secondAttribute="bottom" id="FO0-BL-gcb"/>
+                                        <constraint firstItem="GZC-bt-y42" firstAttribute="centerY" secondItem="1wk-h1-dHL" secondAttribute="centerY" id="HHd-m8-0wZ"/>
+                                        <constraint firstItem="Hcv-hs-9eO" firstAttribute="top" secondItem="1wk-h1-dHL" secondAttribute="topMargin" constant="-8" id="MPg-nD-ugh"/>
+                                        <constraint firstItem="iei-nq-0r2" firstAttribute="top" secondItem="1wk-h1-dHL" secondAttribute="topMargin" constant="2" id="Nx6-Mg-nwu"/>
+                                        <constraint firstItem="iei-nq-0r2" firstAttribute="top" secondItem="1wk-h1-dHL" secondAttribute="topMargin" constant="2" id="QJf-Xr-kis"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="iei-nq-0r2" secondAttribute="bottom" constant="2" id="Rw7-cB-TCR"/>
+                                        <constraint firstItem="GZC-bt-y42" firstAttribute="leading" secondItem="iei-nq-0r2" secondAttribute="trailing" constant="16" id="ZDU-hd-Rcz"/>
+                                        <constraint firstItem="Hcv-hs-9eO" firstAttribute="leading" secondItem="1wk-h1-dHL" secondAttribute="leadingMargin" constant="-8" id="ZFQ-kj-Ou6"/>
+                                        <constraint firstItem="GZC-bt-y42" firstAttribute="leading" secondItem="Hcv-hs-9eO" secondAttribute="trailing" constant="8" id="cGc-bf-rVZ"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="H7r-oe-WXi" secondAttribute="trailing" constant="8" id="lC1-FX-WcZ"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="4Qx-LL-KZN" secondAttribute="bottom" constant="2" id="r0I-Ss-0LU"/>
+                                        <constraint firstItem="iei-nq-0r2" firstAttribute="top" secondItem="1wk-h1-dHL" secondAttribute="topMargin" id="qUa-fh-bTJ"/>
+                                        <constraint firstItem="iei-nq-0r2" firstAttribute="leading" secondItem="1wk-h1-dHL" secondAttribute="leadingMargin" constant="8" id="xqZ-n1-YCr"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="0ip-a8-yjs"/>
+                                            <exclude reference="Nx6-Mg-nwu"/>
+                                            <exclude reference="QJf-Xr-kis"/>
+                                            <exclude reference="Rw7-cB-TCR"/>
+                                            <exclude reference="3a6-m5-T4u"/>
+                                            <exclude reference="4KV-Ei-lBN"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="checkButton" destination="4Qx-LL-KZN" id="jSR-qw-81D"/>
+                                    <outlet property="checkbox" destination="iei-nq-0r2" id="MCG-V5-Y7t"/>
                                     <outlet property="timeLabel" destination="H7r-oe-WXi" id="l4U-se-4dz"/>
                                     <outlet property="titleLabel" destination="GZC-bt-y42" id="q4O-8f-Jhf"/>
                                 </connections>
@@ -507,8 +528,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tabbar_list_selected" width="34" height="22"/>
-        <image name="tabbar_list_unselected" width="34" height="22"/>
+        <image name="checkbox_checked" width="44" height="44"/>
+        <image name="checkbox_unchecked" width="44" height="44"/>
+        <image name="tabbar_list_selected" width="40" height="50"/>
+        <image name="tabbar_list_unselected" width="40" height="50"/>
         <image name="tabbar_me_selected" width="48" height="48"/>
         <image name="tabbar_me_unselected" width="48" height="48"/>
     </resources>
